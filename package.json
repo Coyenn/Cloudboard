@@ -23,8 +23,10 @@
     "@headlessui/react": "^1.4.1",
     "moment": "^2.29.1",
     "next": "11.1.2",
+    "ping": "^0.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-iframe": "^1.8.0",
     "react-time": "^4.3.0"
   },
   "devDependencies": {

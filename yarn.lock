@@ -2692,6 +2692,14 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.0.tgz#f1f061de8f6a4bf022892e2d128234fb98302972"
   integrity sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==
 
+ping@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/ping/-/ping-0.4.1.tgz#1436575a39baafe3ed2b76f6a116c51780f32299"
+  integrity sha512-zYouogtyis0QpEZwWY1T26iuIOMJx+ajtjVMcPKIdWRq2Ie3Ftkbel8I25M5kCAQQMQhsez6ZbPiYjNe7aBjSQ==
+  dependencies:
+    q "1.x"
+    underscore "^1.12.0"
+
 pkg-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
@@ -3167,6 +3175,11 @@ purgecss@^4.0.3:
     postcss "^8.2.1"
     postcss-selector-parser "^6.0.2"
 
+q@1.x:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
+  integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
+
 querystring-es3@0.2.1, querystring-es3@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/querystring-es3/-/querystring-es3-0.2.1.tgz#9ec61f79049875707d69414596fd907a4d711e73"
@@ -3232,6 +3245,13 @@ react-dom@17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-iframe@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/react-iframe/-/react-iframe-1.8.0.tgz#8c78f2c59b894ca5605fa7e45e61e27e57e96091"
+  integrity sha512-NYi89+rEqREwQxW9sDf+akh6/dtwWd3bOjByoVEIQ7SicOxVawRMer3pLdWjFaHXpuxTB9NqobPf/Ohj2iAKkg==
+  dependencies:
+    object-assign "^4.1.1"
 
 react-is@17.0.2:
   version "17.0.2"
@@ -3862,6 +3882,11 @@ unbox-primitive@^1.0.1:
     has-bigints "^1.0.1"
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
+
+underscore@^1.12.0:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+  integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
 
 uniq@^1.0.1:
   version "1.0.1"

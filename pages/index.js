@@ -1,8 +1,8 @@
-import Image from "next/image";
 import services from "config/services";
 import Time from "react-time";
 import moment from "moment";
 import { Transition } from "@headlessui/react";
+import PingStatus from "components/ping-status";
 
 function generateGreetings() {
   var currentHour = moment().format("HH");
@@ -21,7 +21,7 @@ function generateGreetings() {
 }
 
 export default function IndexPage() {
-  const servicesJSX = services.map(({ name, imageURL, link }) => (
+  const servicesJSX = services.map(({ name, imageURL, link, tag }) => (
     <a key={link} href={link} target="_blank" rel="noreferrer" className="transform rounded-md bg-gray-800 border-2 border-gray-600 p-5 transition-all hover:shadow-xl hover:scale-105">
       <div className="flex flex-col sm:flex-row text-center sm:text-left">
         <div className="pb-3 sm:pb-0 sm:pr-5">
@@ -30,9 +30,10 @@ export default function IndexPage() {
         <div>
           <div className="mb-1">
             <h2 className="text-white font-bold inline">{name}</h2>
-            <div className="inline p-1 rounded-md ml-1 text-xs bg-transparent text-gray-600 text-white">Credential Management</div>
+            <div className="inline p-1 rounded-md ml-1 text-xs bg-transparent text-gray-600 text-white">{tag}</div>
           </div>
           <p className="text-gray-300">{link}</p>
+          <PingStatus url={link} />
         </div>
       </div>
     </a>
