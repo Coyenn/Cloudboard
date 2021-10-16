@@ -10,5 +10,11 @@
         "imageURL": "https://owenfarrell.gallerycdn.vsassets.io/extensions/owenfarrell/vscode-vault/2.2.3/1608326133876/Microsoft.VisualStudio.Services.Icons.Default",
         "link": "http://vault.home.local",
         "tag": "Credential Management"
+    },
+    {
+        "name": "Drone",
+        "imageURL": "https://miro.medium.com/max/256/0*AqO_2lNemh_Fl9Gm.png",
+        "link": "http://drone.home.local/",
+        "tag": "CI/CD"
     }
 ]
