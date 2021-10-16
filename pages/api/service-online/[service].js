@@ -1,20 +1,14 @@
 export default function handler(req, res) {
-  const serviceURL = decodeURIComponent(req.query.service)
+  const serviceURL = decodeURIComponent(req.query.service);
+  let serviceStatus = "Offline";
 
   fetch(serviceURL)
-    .then(
-      (result) => {
-        const status = result.status;
-
-        if(result.status === 200) {
-  		    res.status(200).json({ status: "Online" });
-        }
-        else {
-  		    res.status(500).json({ status: "Offline" });
-        }
-      },
-      (error) => {
-  		  res.status(500).json({ status: "Offline" });
+    .then((result) => {
+      if (result.status === 200) {
+        serviceStatus = "Online";
       }
-    );
+    })
+    .then(() => {
+      res.status(200).json({ status: serviceStatus });
+    });
 }

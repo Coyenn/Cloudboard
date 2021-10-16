@@ -21,6 +21,7 @@
   "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@tailwindcss/forms": "^0.3.4",
     "moment": "^2.29.1",
     "next": "11.1.2",
     "ping": "^0.4.1",
