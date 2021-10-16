@@ -4,9 +4,9 @@ import { Transition } from "@headlessui/react";
 import PingStatus from "components/ping-status";
 import ServiceSettings from "@components/service-settings";
 import AddServiceModal from "@components/add-service-modal";
-import ServiceInteraction from "pages/_service-interaction";
+import ServiceInteraction from "services/_service-interaction";
 import React from "react";
-import EventEmitter from "pages/events/_events";
+import EventEmitter from "events/_events";
 
 function generateGreetings() {
   var currentHour = moment().format("HH");

@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import ServiceInteraction from "pages/_service-interaction";
+import ServiceInteraction from "services/_service-interaction";
 
 export default function ServiceSettings(props) {
   const deleteService = async () => {

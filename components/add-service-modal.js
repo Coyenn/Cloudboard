@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import ServiceInteraction from "pages/_service-interaction";
+import ServiceInteraction from "services/_service-interaction";
 
 export default function AddServiceModal() {
   let [isOpen, setIsOpen] = useState(false);

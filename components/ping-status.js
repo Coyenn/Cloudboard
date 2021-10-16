@@ -1,4 +1,5 @@
 import React from "react";
+import ServiceInteraction from "services/_service-interaction";
 
 class PingStatus extends React.Component {
   constructor(props) {
@@ -9,30 +10,13 @@ class PingStatus extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch("/api/service-online/" + encodeURIComponent(this.props.url))
-      .then((res) => res.json())
-      .then(
-        (result) => {
-		  if(result.status === "Online") {
-				this.setState({
-					isLoaded: true,
-				});
-		  }
-		  else {
-			this.setState({
-				isLoaded: true,
-				error: true,
-			});
-		  }
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error: true,
-          });
-        }
-      );
+  async componentDidMount() {
+    const serviceStatus = await ServiceInteraction.serviceOnline(encodeURIComponent(this.props.url));
+    
+    this.setState({
+      isLoaded: true,
+      error: !serviceStatus,
+    });
   }
 
   render() {
