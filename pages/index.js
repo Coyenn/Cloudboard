@@ -6,6 +6,7 @@ import ServiceSettings from "@components/service-settings";
 import AddServiceModal from "@components/add-service-modal";
 import ServiceInteraction from "pages/_service-interaction";
 import React from "react";
+import EventEmitter from "pages/events/_events";
 
 function generateGreetings() {
   var currentHour = moment().format("HH");
@@ -24,6 +25,12 @@ function generateGreetings() {
 }
 
 export default class IndexPage extends React.Component {
+  async listenForServicesChanged() {
+    EventEmitter.on("services-changed", () => {
+      this.populateServiceJSX();
+    })
+  }
+
   async getAllServices() {
     return await ServiceInteraction.getServices();
   }
@@ -66,6 +73,7 @@ export default class IndexPage extends React.Component {
     };
 
     this.populateServiceJSX();
+    this.listenForServicesChanged();
   }
 
   render() {

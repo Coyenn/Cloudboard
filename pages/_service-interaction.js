@@ -1,4 +1,10 @@
+import EventEmitter from "pages/events/_events";
+
 class ServiceInteraction {
+  async servicesChanged() {
+    EventEmitter.emit("services-changed");
+  }
+
   async getServices() {
     const res = await fetch("/api/service/get", {
       method: "POST",
@@ -21,6 +27,7 @@ class ServiceInteraction {
       method: "POST",
     })
 
+    this.servicesChanged();
     return res;
   }
 
@@ -35,6 +42,7 @@ class ServiceInteraction {
       method: "POST",
     });
 
+    this.servicesChanged();
     return res;
   }
 }
