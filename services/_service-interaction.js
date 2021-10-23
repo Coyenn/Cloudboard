@@ -1,4 +1,5 @@
 import EventEmitter from "events/_events";
+import { server } from "config";
 
 class ServiceInteraction {
   async servicesChanged() {
@@ -6,13 +7,13 @@ class ServiceInteraction {
   }
 
   async serviceOnline(url) {
-    const res = await fetch("/api/service-online/" + url).then((res) => res.json());
+    const res = await fetch(`${server}/api/service-online/` + url).then((res) => res.json());
     
     return res.status === "Online" ? true : false;
   }
 
   async getServices() {
-    const res = await fetch("/api/service/get", {
+    const res = await fetch(`${server}/api/service/get`, {
       method: "POST",
     });
 
@@ -20,7 +21,7 @@ class ServiceInteraction {
   }
 
   async createService(name, imageURL, link, tag) {
-    const res = await fetch("/api/service/create", {
+    const res = await fetch(`${server}/api/service/create`, {
       body: JSON.stringify({
         name: name,
         imageURL: imageURL,
@@ -38,7 +39,7 @@ class ServiceInteraction {
   }
 
   async deleteService(serviceName) {
-    const res = await fetch(server + "/api/service/delete", {
+    const res = await fetch(`${server}/api/service/delete`, {
       body: JSON.stringify({
         name: serviceName,
       }),
