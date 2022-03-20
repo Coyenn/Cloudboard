@@ -26,7 +26,7 @@
     "react-dom": "17.0.2",
     "react-iframe": "^1.8.0",
     "react-time": "^4.3.0",
-    "autoprefixer": "10.4.0",
+    "autoprefixer": "10.4.4",
     "classnames": "2.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
