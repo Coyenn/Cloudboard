@@ -1,4 +1,4 @@
-import EventEmitter from "events/_events";
+import EventEmitter from "../events/_events";
 import { server } from "../config/index";
 
 class ServiceInteraction {
@@ -44,10 +44,10 @@ class ServiceInteraction {
     return res;
   }
 
-  async deleteService(serviceName) {
+  async deleteService(serviceId) {
     const res = await fetch(`${server}/api/service/delete`, {
       body: JSON.stringify({
-        name: serviceName,
+        id: serviceId,
       }),
       headers: {
         "Content-Type": "application/json",

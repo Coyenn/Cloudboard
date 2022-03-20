@@ -1,0 +1,16 @@
+version: '3'
+services:
+  cloudboard:
+    image: cloudboard
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "80:80"
+    links:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"

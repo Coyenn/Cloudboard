@@ -1,12 +1,12 @@
 import Time from "react-time";
 import moment from "moment";
 import { Transition } from "@headlessui/react";
-import PingStatus from "components/ping-status";
-import ServiceSettings from "@components/service-settings";
-import AddServiceModal from "@components/add-service-modal";
-import ServiceInteraction from "services/_service-interaction";
+import PingStatus from "../components/ping-status";
+import ServiceSettings from "../components/service-settings";
+import AddServiceModal from "../components/add-service-modal";
+import ServiceInteraction from "../services/_service-interaction";
 import React from "react";
-import EventEmitter from "events/_events";
+import EventEmitter from "../events/_events";
 
 function generateGreetings() {
   var currentHour = moment().format("HH");
@@ -46,7 +46,7 @@ export default class IndexPage extends React.Component {
     }
     else {
       this.setState({
-        servicesJSX: services.map(({ name, imageURL, link, tag }) => (
+        servicesJSX: services.map(({ name, imageURL, link, tag, id }) => (
           <Transition key={link} appear={true} show={true} enter="transform transition duration-[400ms]" enterFrom="opacity-0 scale-50" enterTo="opacity-100 scale-100" leave="transform duration-200 transition ease-in-out" leaveFrom="opacity-100 scale-100 " leaveTo="opacity-0 scale-95 ">
             <div className="w-100 h-100 transform rounded-md bg-gray-800 border-2 border-gray-600 p-5 transition-all hover:shadow-xl">
               <a href={link} target="_blank" rel="noreferrer">
@@ -65,7 +65,7 @@ export default class IndexPage extends React.Component {
                 </div>
               </a>
               <div className="absolute top-2 right-0">
-                <ServiceSettings serviceName={name} />
+                <ServiceSettings serviceId={id} />
               </div>
             </div>
           </Transition>

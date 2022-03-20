@@ -1,14 +1,26 @@
-const fs = require("fs");
-let services = require("data/services.json")
+import { PrismaClient } from '@prisma/client'
 
-function saveData() {
-  fs.writeFileSync("data/services.json", JSON.stringify(services, null, 4));
+async function createNewService(newServiceData) {
+	const prisma = new PrismaClient();
+	await prisma.$connect();
+
+	prisma.service.create({
+		data: {
+			name: newServiceData.name,
+			link: newServiceData.link,
+			imageURL: newServiceData.imageURL,
+			tag: newServiceData.tag,
+		}
+	}).catch((e) => {
+		console.error(e);
+	})
+
+	await prisma.$disconnect();
 }
 
-export default function handler(req, res) {
-	services.push(req.body)
-	saveData()
+export default async function handler(req, res) {
+	console.log(req.body);
+	await createNewService(req.body);
 
-	console.log(req.body, services)
 	res.status(200).end();
 }

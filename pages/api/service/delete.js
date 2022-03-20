@@ -1,17 +1,17 @@
-const fs = require("fs");
-let services = require("data/services.json");
+import { PrismaClient } from '@prisma/client'
 
-function saveData() {
-  fs.writeFileSync("data/services.json", JSON.stringify(services, null, 4));
-}
 
-export default function handler(req, res) {
-  services.forEach((service) => {
-    if (service.name === req.body.name) {
-		services.splice(services.indexOf(service), 1)
+export default async function handler(req, res) {
+  const prisma = new PrismaClient();
+
+  await prisma.$connect();
+  await prisma.service.delete({
+    where: {
+      id: req.body.id,
     }
-  });
+  }).finally(() => {
+    res.status(200).end();
+  })
 
-  saveData();
-  res.status(200).end();
+  await prisma.$disconnect();
 }

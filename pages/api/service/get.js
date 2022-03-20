@@ -1,5 +1,15 @@
-let services = require("data/services.json");
+import { PrismaClient } from '@prisma/client'
 
-export default function handler(req, res) {
+const prisma = new PrismaClient();
+
+async function main() {
+  await prisma.$connect();
+}
+
+main();
+
+export default async function handler(req, res) {
+  const services = await prisma.service.findMany();
+
   res.status(200).json(services);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceInteraction from "services/_service-interaction";
+import ServiceInteraction from "../services/_service-interaction";
 
 class PingStatus extends React.Component {
   constructor(props) {

@@ -1,14 +1,14 @@
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const serviceURL = decodeURIComponent(req.query.service);
-  let serviceStatus = "Offline";
+  let status = "Offline";
 
-  fetch(serviceURL)
+  await fetch(serviceURL)
     .then((result) => {
-      if (result.status === 200) {
-        serviceStatus = "Online";
-      }
-    })
-    .then(() => {
-      res.status(200).json({ status: serviceStatus });
+      status = result.status === 200 ? "Online" : "Offline";
+    }).catch((e) => {
+      status = "Error";
+    }).finally(() => {
+      res.status(200).json({ status: status });
+      res.status(200).end();
     });
 }
