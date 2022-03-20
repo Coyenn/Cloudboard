@@ -1,7 +1,7 @@
 {
-  "name": "next-starter-tailwind",
-  "version": "2.0.0",
-  "description": "Next.js starter styled with Tailwind CSS",
+  "name": "cloudboard",
+  "version": "1.0.0",
+  "description": "Dashboard for Web-Services",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,15 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylorbryant/next-starter-tailwind.git"
+    "url": "git+https://github.com/Coyenn/Cloudboard.git"
   },
-  "author": "Taylor Bryant",
+  "author": "Tim Ritter",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/next-starter-tailwind/issues"
-  },
-  "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
-  "dependencies": {
+  "devDependencies": {
     "@headlessui/react": "^1.4.1",
     "@tailwindcss/forms": "^0.3.4",
     "events": "^3.3.0",
@@ -29,9 +25,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-iframe": "^1.8.0",
-    "react-time": "^4.3.0"
-  },
-  "devDependencies": {
+    "react-time": "^4.3.0",
     "autoprefixer": "10.4.0",
     "classnames": "2.3.1",
     "eslint": "7.32.0",

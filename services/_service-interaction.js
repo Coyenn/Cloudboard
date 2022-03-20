@@ -1,5 +1,5 @@
 import EventEmitter from "events/_events";
-import { server } from "config";
+import { server } from "../config/index";
 
 class ServiceInteraction {
   async servicesChanged() {
@@ -8,16 +8,22 @@ class ServiceInteraction {
 
   async serviceOnline(url) {
     const res = await fetch(`${server}/api/service-online/` + url).then((res) => res.json());
-    
+
     return res.status === "Online" ? true : false;
   }
 
   async getServices() {
-    const res = await fetch(`${server}/api/service/get`, {
+    let returnValue = "";
+
+    await fetch(`${server}/api/service/get`, {
       method: "POST",
+    }).then((res) => {
+      returnValue = res.json();
+    }).catch((e) => {
+      returnValue = e.toString();
     });
 
-    return res.json();
+    return returnValue;
   }
 
   async createService(name, imageURL, link, tag) {
