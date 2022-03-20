@@ -1,5 +1,9 @@
 import EventEmitter from "../events/_events";
-import { server } from "../config/index";
+let server = "";
+
+if (typeof window !== "undefined") {
+   server = window.location.origin;
+}
 
 class ServiceInteraction {
   async servicesChanged() {
