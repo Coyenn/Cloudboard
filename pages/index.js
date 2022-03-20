@@ -89,7 +89,7 @@ export default class IndexPage extends React.Component {
       <div>
         <div className="mb-10">
           <h1 className="text-white text-5xl text-center font-bold mb-2">
-            Good {generateGreetings()},<span className="text-blue-500">Tim</span>
+            Good <span className="text-blue-500">{generateGreetings()}</span>
           </h1>
           <h3 className="text-white text-lg text-center font-bold">{<Time value={new Date()} format="DD.MM.YYYY HH:mm" />}</h3>
         </div>
