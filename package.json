@@ -28,7 +28,7 @@
     "moment": "2.29.1",
     "next": "12.0.4",
     "ping": "0.4.1",
-    "postcss": "8.4.8",
+    "postcss": "8.4.12",
     "postcss-100vh-fix": "1.0.2",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-hover-media-feature": "1.0.1",
