@@ -30,10 +30,11 @@ export default function AddServiceModal() {
         </button>
       </div>
 
-      <Transition show={isOpen} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeModal}>
+      <Transition show={isOpen} as="div">
+        <Dialog as="div" className="inset-0 z-50 overflow-y-auto fixed opacity-100" onClose={closeModal}>
           <div className="min-h-screen px-4 text-center">
-            <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
+            <Transition.Child as="div" enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
+              <div className="bg-black absolute top-0 left-0 w-screen h-screen opacity-50"></div>
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
 
@@ -46,10 +47,10 @@ export default function AddServiceModal() {
                 <Dialog.Title as="h3" className="text-xl font-medium leading-6 text-white text-center">
                   New Service
                 </Dialog.Title>
-                <form onSubmit={createService}>
+                <form onSubmit={createService} autoComplete="off">
                   <div className="my-10">
                     <label htmlFor="serviceName" className="text-white">
-                      Name
+                      Service Name
                     </label>
                     <div className="mt-2">
                       <input required type="text" className="min-w-full rounded-lg mb-3 border-2 border-gray-600 bg-transparent text-white" name="serviceName" id="serviceName" />
@@ -74,6 +75,9 @@ export default function AddServiceModal() {
                     </div>
                   </div>
                   <div className="flex justify-center">
+                    <button type="button" className="mr-2 inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500" onClick={closeModal}>
+                      Cancel
+                    </button>
                     <button type="submit" className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500" onClick={closeModal}>
                       Create
                     </button>
