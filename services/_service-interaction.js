@@ -11,7 +11,7 @@ class ServiceInteraction {
   }
 
   async serviceOnline(url) {
-    const res = await fetch(`${server}/api/service-online/` + url).then((res) => res.json());
+    const res = await fetch(`${server}/api/service/online/` + url).then((res) => res.json());
 
     return res.status === "Online" ? true : false;
   }

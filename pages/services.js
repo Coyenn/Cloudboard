@@ -1,5 +1,3 @@
-import Time from "react-time";
-import moment from "moment";
 import { Transition } from "@headlessui/react";
 import PingStatus from "../components/ping-status";
 import ServiceSettings from "../components/service-settings";
