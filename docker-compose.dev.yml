@@ -2,6 +2,7 @@ version: '3'
 services:
   cloudboard:
     image: node:latest
+    platform: linux/amd64
     ports:
       - "3000:3000"
     volumes:
@@ -12,6 +13,7 @@ services:
 
   postgres:
     image: postgres:latest
+    platform: linux/amd64
     ports:
       - "5432:5432"
     links:
