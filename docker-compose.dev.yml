@@ -1,8 +1,11 @@
 version: '3'
 services:
   cloudboard:
-    image: node:latest
+    image: cloudboard
     platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -10,15 +13,3 @@ services:
     entrypoint: yarn dev
     working_dir: /app
     user: "1000:1000"
-
-  postgres:
-    image: postgres:latest
-    platform: linux/amd64
-    ports:
-      - "5432:5432"
-    links:
-      - cloudboard
-    environment:
-      - POSTGRES_PASSWORD=cloudboard_db_password
-      - POSTGRES_USER=cloudboard_db_user
-      - POSTGRES_DB=cloudboard_db

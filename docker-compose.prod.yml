@@ -8,11 +8,5 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "80:80"
-    links:
-      - postgres
-
-  postgres:
-    image: postgres:latest
-    platform: linux/amd64
-    ports:
-      - "5432:5432"
+    working_dir: /app
+    user: "1000:1000"
