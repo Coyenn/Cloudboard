@@ -1,12 +1,10 @@
-version: '3'
+version: '3.3'
 services:
   cloudboard:
     image: cloudboard
-    platform: linux/amd64
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
       - "80:80"
     working_dir: /app
-    user: "1000:1000"

@@ -1,15 +1,13 @@
-version: '3'
+version: '3.3'
 services:
   cloudboard:
     image: cloudboard
-    platform: linux/amd64
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "3000:3000"
+      - "80:3000"
     volumes:
       - ./:/app
     entrypoint: yarn dev
     working_dir: /app
-    user: "1000:1000"
