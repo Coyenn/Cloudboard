@@ -28,7 +28,7 @@
     "eslint-config-next": "12.1.1",
     "events": "3.3.0",
     "moment": "2.29.1",
-    "next": "12.1.1",
+    "next": "12.1.4",
     "ping": "0.4.1",
     "postcss": "8.4.12",
     "postcss-100vh-fix": "1.0.2",
