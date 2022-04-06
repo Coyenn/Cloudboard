@@ -4,7 +4,7 @@
   "description": "Dashboard for Web-Services",
   "main": "index.js",
   "scripts": {
-    "dev": "npx prisma db push && next",
+    "dev": "yarn install && npx prisma db push && next",
     "build": "next build",
     "start": "npx prisma db push && next start -p 80",
     "lint": "next lint"
