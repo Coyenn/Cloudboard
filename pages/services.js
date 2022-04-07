@@ -39,7 +39,7 @@ export default class ServicePage extends React.Component {
                                     <div>
                                         <div className="mb-1">
                                             <h2 className="text-white font-bold inline">{name}</h2>
-                                            <div className="inline p-1 rounded-md ml-1 text-xs bg-transparent text-gray-600 text-white">{tag}</div>
+                                            <div className="inline p-1 rounded-md ml-1 text-xs bg-transparent text-white">{tag}</div>
                                         </div>
                                         <p className="text-gray-300">{link}</p>
                                         <PingStatus url={link} />
