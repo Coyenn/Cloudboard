@@ -18,7 +18,8 @@ export default async function handler(req, res) {
 
     getWeatherInfo().then((info) => {
         res.status(200).json(JSON.stringify(info, null, 2));
+    }).catch((e) => {
+        console.error(e);
+        res.status(500);
     });
-
-    res.status(500);
 }
