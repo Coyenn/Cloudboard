@@ -8,25 +8,39 @@ import ServicesPreviewPicture from "../public/ServicesPreviewPicture.png";
 import WeatherPreviewPicture from "../public/WeatherPreviewPicture.png";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
-function generateGreetings() {
-  var currentHour = moment().format("HH");
-
-  if (currentHour >= 3 && currentHour < 12) {
-    return "Morning";
-  } else if (currentHour >= 12 && currentHour < 15) {
-    return "Afternoon";
-  } else if (currentHour >= 15 && currentHour < 20) {
-    return "Evening";
-  } else if (currentHour >= 20 && currentHour < 3) {
-    return "Night";
-  } else {
-    return "Night";
-  }
-}
 
 export default class IndexPage extends React.Component {
+  generateGreetings() {
+    let currentHour = moment().format("HH");
+    let time = "Error";
+
+    if (currentHour >= 3 && currentHour < 12) {
+      time = "Morning";
+    } else if (currentHour >= 12 && currentHour < 15) {
+      time = "Afternoon";
+    } else if (currentHour >= 15 && currentHour < 20) {
+      time = "Evening";
+    } else if (currentHour >= 20 && currentHour < 3) {
+      time = "Night";
+    } else {
+      time = "Night";
+    }
+
+    this.setState({
+      time: time,
+    })
+  }
+
   constructor(props) {
     super(props);
+
+    this.state = {
+      time: "Loading",
+    };
+  }
+
+  componentDidMount() {
+    this.generateGreetings();
   }
 
   render() {
@@ -34,9 +48,11 @@ export default class IndexPage extends React.Component {
       <div>
         <div className="mb-10">
           <h1 className="text-white text-5xl text-center font-bold mb-2">
-            Good <span className="text-blue-500">{generateGreetings()}</span>
+            Good <span className="text-blue-500">{this.state?.time}</span>
           </h1>
-          <h3 className="text-white text-lg text-center font-bold">{<Time value={new Date()} format="DD.MM.YYYY HH:mm" />}</h3>
+          <h3 className="text-white text-lg text-center font-bold">
+            <Time value={new Date()} format="DD.MM.YYYY HH:mm" />
+          </h3>
           <div className="border-b border-gray-600 my-10"></div>
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <Transition appear={true} show={true} enter="transform transition duration-[400ms]" enterFrom="opacity-0 scale-50" enterTo="opacity-100 scale-100" leave="transform duration-200 transition ease-in-out" leaveFrom="opacity-100 scale-100 " leaveTo="opacity-0 scale-95 ">
