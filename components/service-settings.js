@@ -8,7 +8,7 @@ export default function ServiceSettings(props) {
   }
 
   return (
-    <Menu as="div" className="text-right">
+    <Menu as="div" className="text-right z-50">
       <div className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-transparent rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
