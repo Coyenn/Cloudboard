@@ -21,7 +21,7 @@ export default function ServiceSettings(props) {
           <Menu.Items className="border border-gray-600 absolute right-0 w-56 mt-2 origin-top-right bg-gray-800 divide-y divide-gray-600 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1">
               <Menu.Item as={Fragment}>
-                <a href={props.serviceLink} target="_blank" rel="norefferer" className={"hover:bg-gray-700 text-white group flex rounded-md items-center w-full px-2 py-2 text-sm"}>
+                <a href={props.serviceLink} target="_blank" rel="noreferrer" className={"hover:bg-gray-700 text-white group flex rounded-md items-center w-full px-2 py-2 text-sm"}>
                   <ExternalIcon className="w-5 h-5 mr-2 text-violet-400" aria-hidden="true" />
                   Open in new tab
                 </a>
