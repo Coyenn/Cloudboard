@@ -47,7 +47,7 @@ export default class ServicePage extends React.Component {
                                 </div>
                             </a>
                             <div className="absolute top-2 right-0">
-                                <ServiceSettings serviceId={id} />
+                                <ServiceSettings serviceId={id} serviceLink={link} />
                             </div>
                         </div>
                     </Transition>
