@@ -7,7 +7,7 @@ COPY . .
 RUN touch ./prisma/app.db && chmod -R 777 ./prisma
 RUN yarn install
 RUN yarn build
-RUN chown cloudboard:cloudboard -R /app && chmod -R 777 /app
+RUN chown cloudboard:cloudboard -R /app
 EXPOSE 80
 USER cloudboard
 CMD [ "yarn", "start" ]
