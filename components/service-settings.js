@@ -8,8 +8,8 @@ export default function ServiceSettings(props) {
   }
 
   return (
-    <Menu as="div" className="text-right z-50">
-      <div className="relative inline-block text-left">
+    <Menu as="div" className="text-right">
+      <div className="inline-block text-left">
         <div>
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-500 bg-transparent rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,7 +18,7 @@ export default function ServiceSettings(props) {
           </Menu.Button>
         </div>
         <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="transform opacity-0 scale-95" enterTo="transform opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="transform opacity-100 scale-100" leaveTo="transform opacity-0 scale-95">
-          <Menu.Items className="border border-gray-600 absolute right-0 w-56 mt-2 origin-top-right bg-gray-800 divide-y divide-gray-600 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="z-50 border border-gray-600 absolute right-0 w-56 mt-2 origin-top-right bg-gray-800 divide-y divide-gray-600 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1">
               <Menu.Item as={Fragment}>
                 <a href={props.serviceLink} target="_blank" rel="noreferrer" className={"hover:bg-gray-700 text-white group flex rounded-md items-center w-full px-2 py-2 text-sm"}>
