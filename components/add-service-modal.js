@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import ServiceInteraction from "../services/_service-interaction";
+import { XIcon } from "@heroicons/react/outline/"
 
 export default function AddServiceModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -48,6 +49,10 @@ export default function AddServiceModal() {
                 <Dialog.Title as="h3" className="text-xl font-medium leading-6 text-gray-700 dark:text-white text-center">
                   New Service
                 </Dialog.Title>
+
+                <a className="w-10 h-10 absolute right-0 top-0 m-4 p-2 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700 focus:border-blue-600 focus:bg-gray-100 dark:focus:bg-gray-700 cursor-pointer" onClick={closeModal}>
+                  <XIcon />
+                </a>
                 <form onSubmit={createService} autoComplete="off">
                   <div className="my-10">
                     <label htmlFor="serviceName" className="text-gray-700 dark:text-white">
