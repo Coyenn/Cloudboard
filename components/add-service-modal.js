@@ -18,6 +18,7 @@ export default function AddServiceModal() {
     const target = event.target
 
     ServiceInteraction.createService(target.serviceName.value, target.serviceImageURL.value, target.serviceLink.value, target.serviceTag.value);
+    closeModal();
   }
 
   return (
@@ -33,7 +34,7 @@ export default function AddServiceModal() {
       <Transition show={isOpen} as="div">
         <Dialog as="div" className="inset-0 z-50 overflow-y-auto fixed opacity-100" onClose={closeModal}>
           <div className="min-h-screen px-4 text-center">
-            <Transition.Child as="div" enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
+            <Transition.Child as="div" enter="ease-out duration-200" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
               <div className="bg-black absolute top-0 left-0 w-screen h-screen opacity-50"></div>
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
@@ -42,7 +43,7 @@ export default function AddServiceModal() {
             <span className="inline-block h-screen align-middle" aria-hidden="true">
               &#8203;
             </span>
-            <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
+            <Transition.Child as={Fragment} enter="ease-out duration-200" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-100" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
               <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 shadow-2xl">
                 <Dialog.Title as="h3" className="text-xl font-medium leading-6 text-gray-700 dark:text-white text-center">
                   New Service
@@ -78,7 +79,7 @@ export default function AddServiceModal() {
                     <button type="button" className="mr-2 inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-100 border border-transparent hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500" onClick={closeModal}>
                       Cancel
                     </button>
-                    <button type="submit" className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500" onClick={closeModal}>
+                    <button type="submit" className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                       Create
                     </button>
                   </div>
