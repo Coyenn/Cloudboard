@@ -23,7 +23,7 @@ export default function AddServiceModal() {
   return (
     <>
       <div className="inset-0 flex items-center">
-        <button type="button" onClick={openModal} className="p-1 mb-3 text-sm font-medium text-gray-500 hover:bg-gray-100 focus:border-blue-600 focus:bg-gray-100">
+        <button type="button" onClick={openModal} className="p-1 mb-3 text-sm font-medium text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:border-blue-600 focus:bg-gray-100 dark:focus:bg-gray-700">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
