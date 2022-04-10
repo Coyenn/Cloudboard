@@ -12,13 +12,13 @@ export default function Header() {
   const routesJSX = routes.map(({ route, title }) => (
     <li className="mt-3 md:mt-0 md:ml-6" key={title}>
       <Link href={route}>
-        <a className="block text-gray-900 dark:text-white">{title}</a>
+        <a className="block text-gray-700 dark:text-white">{title}</a>
       </Link>
     </li>
   ));
 
   return (
-    <header className={`${headerIsHidden === true ? "pointer-events-none" : "bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 border-b-2"}  text-gray-900 dark:text-white z-10`}>
+    <header className={`${headerIsHidden === true ? "pointer-events-none" : "bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 border-b-2"}  text-gray-700 dark:text-white z-10`}>
       <div className={`flex py-6 pr-20 ${headerIsHidden === true ? "" : "hidden"}`}>
         <ul className="ml-auto">
           <li className="mt-3 md:mt-0 md:ml-6" key="Hide">
@@ -33,14 +33,14 @@ export default function Header() {
       </div>
       <div className={`flex flex-wrap items-center justify-between lg:container px-4 py-6 mx-auto md:flex-no-wrap md:px-6 ${headerIsHidden === true ? "hidden" : ""}`}>
         <div className="flex items-center">
-          <Logo width={40} height={40} priority alt="Cloudboard Logo" />
+          <Logo width={40} height={40} alt="Cloudboard Logo" />
 
           <Link href="/">
-            <a className="text-lg md:text-xl font-bold ml-3 text-gray-900 dark:text-white">Cloudboard</a>
+            <a className="text-lg md:text-xl font-bold ml-3 text-gray-700 dark:text-white">Cloudboard</a>
           </Link>
         </div>
 
-        <button className="flex items-center px-3 py-2 text-gray-900 dark:text-white border border-white rounded md:hidden" onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}>
+        <button className="flex items-center px-3 py-2 text-gray-700 dark:text-white border border-white rounded md:hidden" onClick={() => setMobileMenuIsOpen(!mobileMenuIsOpen)}>
           <svg className="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />

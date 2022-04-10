@@ -47,10 +47,10 @@ export default class IndexPage extends React.Component {
     return (
       <div>
         <div className="mb-10">
-          <h1 className="text-gray-900 dark:text-white text-5xl text-center font-bold mb-2">
+          <h1 className="text-gray-700 dark:text-white text-5xl text-center font-bold mb-2">
             Good <span className="text-blue-500">{this.state?.time}</span>
           </h1>
-          <h3 className="text-gray-900 dark:text-white text-lg text-center font-bold">
+          <h3 className="text-gray-700 dark:text-white text-lg text-center font-bold">
             <Time value={new Date()} format="DD.MM.YYYY HH:mm" />
           </h3>
           <div className="border-b border-gray-200 dark:border-gray-600 my-10"></div>
@@ -62,11 +62,9 @@ export default class IndexPage extends React.Component {
                     <div className="pb-3 sm:pb-0 sm:flex sm:flex-col sm:justify-center">
                     </div>
                     <div>
-                      <div className="hover:scale-105 transition-all duration-300">
-                        <Image src={ServicesPreviewPicture} alt="Services Preview Picture" />
-                      </div>
+                      <Image src={ServicesPreviewPicture} alt="Services Preview Picture" />
                       <div className="mt-2 flex flex-col justify-center">
-                        <h2 className="text-gray-900 dark:text-white text-2xl font-bold flex mb-2">
+                        <h2 className="text-gray-700 dark:text-white text-2xl font-bold flex mb-2">
                           Services
                         </h2>
                         <p className="text-gray-700 dark:text-gray-300">Manage microservices and websites.</p>
@@ -89,11 +87,9 @@ export default class IndexPage extends React.Component {
                     <div className="pb-3 sm:pb-0 sm:flex sm:flex-col sm:justify-center">
                     </div>
                     <div>
-                      <div className="hover:scale-105 transition-all duration-300">
-                        <Image src={WeatherPreviewPicture} alt="Services Preview Picture" />
-                      </div>
+                      <Image src={WeatherPreviewPicture} alt="Services Preview Picture" />
                       <div className="mt-2 flex flex-col justify-center">
-                        <h2 className="text-gray-900 dark:text-white text-2xl font-bold flex mb-2">
+                        <h2 className="text-gray-700 dark:text-white text-2xl font-bold flex mb-2">
                           Weather
                         </h2>
                         <p className="text-gray-700 dark:text-gray-300">View the current weather in your area.</p>
