@@ -17,7 +17,7 @@ export default function Header() {
   ));
 
   return (
-    <header className={`${headerIsHidden === true ? "pointer-events-none" : "bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 border-b-2"}  text-gray-700 dark:text-white z-10`}>
+    <header className={`${headerIsHidden === true ? "pointer-events-none" : "bg-white dark:bg-gray-900 border-gray-100 dark:border-gray-700 border-b-2"}  text-gray-700 dark:text-white z-20`}>
       <div className={`flex py-6 pr-20 ${headerIsHidden === true ? "" : "hidden"}`}>
         <ul className="ml-auto">
           <li className="mt-3 md:mt-0 md:ml-6" key="Hide">
