@@ -14,7 +14,7 @@ export default function AddServiceModal() {
     setIsOpen(true);
   }
 
-  const createService = async event => {
+  const createService = event => {
     event.preventDefault()
     const target = event.target
 

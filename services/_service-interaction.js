@@ -17,21 +17,23 @@ class ServiceInteraction {
   }
 
   async getServices() {
-    let returnValue = "";
+    let result = fetch(`${server}/api/service/get`, {
+      method: "GET",
+    }).then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
 
-    await fetch(`${server}/api/service/get`, {
-      method: "POST",
-    }).then((res) => {
-      returnValue = res.json();
-    }).catch((e) => {
-      returnValue = e.toString();
+      return response.json();
+    }).catch((error) => {
+      return error.toString();
     });
 
-    return returnValue;
+    return result;
   }
 
-  async createService(name, imageURL, link, tag) {
-    const res = await fetch(`${server}/api/service/create`, {
+  createService(name, imageURL, link, tag) {
+    let result = fetch(`${server}/api/service/create`, {
       body: JSON.stringify({
         name: name,
         imageURL: imageURL,
@@ -42,10 +44,18 @@ class ServiceInteraction {
         "Content-Type": "application/json",
       },
       method: "POST",
+    }).then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+
+      return response.json();
+    }).catch((error) => {
+      return error.toString();
     });
 
     this.servicesChanged();
-    return res;
+    return result;
   }
 
   async deleteService(serviceId) {
