@@ -9,6 +9,7 @@ export default class ViewPage extends React.Component {
         this.state = {
             serviceUrl: "",
             failed: false,
+            iFrameLoaded: false,
         };
     }
 
@@ -16,7 +17,7 @@ export default class ViewPage extends React.Component {
         this.getUrl();
         setTimeout(() => {
             this.setState({
-                failed: true,
+                failed: this.state.iFrameLoaded === true ? false : true,
             })
         }, 1000);
     }
@@ -35,10 +36,15 @@ export default class ViewPage extends React.Component {
     render() {
         return (
             <>
-                <iframe src={this.state.serviceUrl} frameBorder="0" className="w-full h-screen absolute top-0 left-0 select-none z-10">
+                <iframe onLoad={() => {
+                    this.setState({
+                        iFrameLoaded: true,
+                        failed: false,
+                    })
+                }} src={this.state.serviceUrl} frameBorder="0" className="w-full h-screen absolute top-0 left-0 select-none z-10">
                 </iframe>
                 {this.state.failed === true ? (
-                    <div className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-0 bg-transparent flex-col">
+                    <div className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-30 bg-transparent flex-col">
                         <h1 className="text-gray-700 dark:text-white text-4xl font-semibold pb-2">Oops...</h1>
                         <p className="text-gray-700 dark:text-white text-lg mb-2">Looks like this didn't work.</p>
                         <Link href="/">
