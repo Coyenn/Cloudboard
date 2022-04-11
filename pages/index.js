@@ -80,31 +80,6 @@ export default class IndexPage extends React.Component {
                 </div>
               </Link>
             </Transition>
-            <Transition appear={true} show={true} enter="transform transition duration-[400ms]" enterFrom="opacity-0 scale-50" enterTo="opacity-100 scale-100" leave="transform duration-200 transition ease-in-out" leaveFrom="opacity-100 scale-100 " leaveTo="opacity-0 scale-95 ">
-              <Link href="/weather" passHref={true}>
-                <div className="w-100 h-100 transform bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 p-5 transition-all hover:shadow-xl cursor-pointer">
-                  <div className="flex flex-col sm:flex-row text-center sm:text-left">
-                    <div className="pb-3 sm:pb-0 sm:flex sm:flex-col sm:justify-center">
-                    </div>
-                    <div>
-                      <Image src={WeatherPreviewPicture} alt="Services Preview Picture" />
-                      <div className="mt-2 flex flex-col justify-center">
-                        <h2 className="text-gray-700 dark:text-white text-2xl font-bold flex mb-2">
-                          Weather
-                        </h2>
-                        <p className="text-gray-700 dark:text-gray-300">View the current weather in your area.</p>
-                        <div className="mt-4">
-                          <button className="flex justify-center px-4 py-2 text-sm font-medium text-green-900 bg-green-100 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500">
-                            View
-                            <ArrowRightIcon className="w-3 h-3 mt-1 ml-2" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </Transition>
           </div>
         </div>
       </div>
