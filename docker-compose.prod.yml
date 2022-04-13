@@ -4,7 +4,6 @@ services:
     image: cloudboard
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile.prod
     ports:
-      - "3000:80"
-    working_dir: /app
+      - "3000:3000"
