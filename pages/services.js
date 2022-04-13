@@ -2,6 +2,7 @@ import { Transition } from "@headlessui/react";
 import PingStatus from "../components/ping-status";
 import ServiceSettings from "../components/service-settings";
 import AddServiceModal from "../components/add-service-modal";
+import EditServiceModal from "../components/edit-service-modal";
 import ServiceInteraction from "../services/_service-interaction";
 import React from "react";
 import EventEmitter from "../events/_events";
@@ -144,6 +145,7 @@ export default class ServicePage extends React.Component {
                     Services
                 </h1>
                 <AddServiceModal />
+                <EditServiceModal />
                 <div className="border-b border-gray-200 dark:border-gray-600 mb-10"></div>
                 <div className="relative">
                     {this.state.services?.length > 0 ? (

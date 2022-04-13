@@ -46,7 +46,7 @@ export default class ViewPage extends React.Component {
                 {this.state.failed === true ? (
                     <div className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center z-30 bg-transparent flex-col">
                         <h1 className="text-gray-700 dark:text-white text-4xl font-semibold pb-2">Oops...</h1>
-                        <p className="text-gray-700 dark:text-white text-lg mb-2">Looks like this didn't work.</p>
+                        <p className="text-gray-700 dark:text-white text-lg mb-2">Looks like this didn&apos;t work.</p>
                         <Link href="/">
                             <p className="text-blue-500 hover:underline cursor-pointer text-md flex hover:bg-gray-100 dark:hover:bg-gray-800 p-2 transition-all duration-100">
                                 <ArrowLeftIcon className="w-4 h-4 mt-1 mr-2" />
