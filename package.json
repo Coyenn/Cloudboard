@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "yarn install && npx prisma db push && next",
     "build": "next build",
-    "start": "next start",
+    "start": "chmod +rwx ./prisma/app.db && next start",
     "lint": "next lint"
   },
   "repository": {
