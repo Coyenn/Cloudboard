@@ -52,9 +52,38 @@ class ServiceInteraction {
       return response.json();
     }).catch((error) => {
       return error.toString();
+    }).finally(() => {
+      this.servicesChanged();
     });
 
-    this.servicesChanged();
+    return result;
+  }
+
+  editService(id, name, imageURL, link, tag){
+    let result = fetch(`${server}/api/service/edit`, {
+      body: JSON.stringify({
+        id: id,
+        name: name,
+        imageURL: imageURL,
+        link: link,
+        tag: tag,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+    }).then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+
+      return response.json();
+    }).catch((error) => {
+      return error.toString();
+    }).finally(() => {
+      this.servicesChanged();
+    });
+
     return result;
   }
 

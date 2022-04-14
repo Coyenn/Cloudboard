@@ -6,12 +6,14 @@ import EventEmitter from "../events/_events";
 
 export default function EditServiceModal() {
     let [isOpen, setIsOpen] = useState(false);
-    let [serviceToEditId, setServiceToEditId] = useState(0);
+    let [serviceToEdit, setServiceToEdit] = useState(undefined);
+    let serviceData = undefined;
 
     async function listenForOpenEvent() {
         EventEmitter.on("edit-service", (service) => {
             openModal();
-            setServiceToEditId(service);
+            setServiceToEdit(service);
+
             return;
         })
     }
@@ -28,7 +30,7 @@ export default function EditServiceModal() {
         event.preventDefault()
         const target = event.target
 
-        ServiceInteraction.editService(target.serviceName.value, target.serviceImageURL.value, target.serviceLink.value, target.serviceTag.value);
+        ServiceInteraction.editService(serviceToEdit.id, target.serviceName.value || serviceToEdit.name, target.serviceImageURL.value || serviceToEdit.imageURL, target.serviceLink.value || serviceToEdit.link, target.serviceTag.value || serviceToEdit.tag);
         closeModal();
     }
 
@@ -62,25 +64,25 @@ export default function EditServiceModal() {
                                         Service Name
                                     </label>
                                     <div className="mt-2">
-                                        <input required type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceName" id="serviceName" />
+                                        <input placeholder={serviceToEdit?.name} type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceName" id="serviceName" />
                                     </div>
                                     <label htmlFor="serviceLink" className="text-gray-700 dark:text-white">
                                         Link (with protocol)
                                     </label>
                                     <div className="mt-2">
-                                        <input required type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceLink" id="serviceLink" />
+                                        <input placeholder={serviceToEdit?.link} type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceLink" id="serviceLink" />
                                     </div>
                                     <label htmlFor="serviceImageURL" className="text-gray-700 dark:text-white">
                                         Image URL
                                     </label>
                                     <div className="mt-2">
-                                        <input required type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceImageURL" id="serviceImageURL" />
+                                        <input placeholder={serviceToEdit?.imageURL} type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceImageURL" id="serviceImageURL" />
                                     </div>
                                     <label htmlFor="serviceTag" className="text-gray-700 dark:text-white">
                                         Tag
                                     </label>
                                     <div className="mt-2">
-                                        <input required type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceTag" id="serviceTag" />
+                                        <input placeholder={serviceToEdit?.tag} type="text" className="min-w-full mb-3 border-2 border-gray-200 dark:border-gray-600 bg-transparent text-gray-700 dark:text-white" name="serviceTag" id="serviceTag" />
                                     </div>
                                 </div>
                                 <div className="flex justify-center">

@@ -37,7 +37,7 @@ const SortableItem = SortableElement(props => {
                     </div>
                 </a>
                 <div className="absolute top-2 right-0">
-                    <ServiceSettings serviceId={item.id} serviceLink={item.link} />
+                    <ServiceSettings service={item} />
                 </div>
             </Handle>
         </Transition>
