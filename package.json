@@ -29,7 +29,7 @@
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "events": "3.3.0",
-    "moment": "2.29.2",
+    "moment": "2.29.3",
     "ping": "0.4.1",
     "postcss": "8.4.12",
     "postcss-100vh-fix": "1.0.2",
