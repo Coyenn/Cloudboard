@@ -27,7 +27,7 @@
     "@types/react": "18.0.12",
     "classnames": "2.3.1",
     "eslint": "8.16.0",
-    "eslint-config-next": "12.2.0",
+    "eslint-config-next": "12.2.3",
     "events": "3.3.0",
     "moment": "2.29.3",
     "ping": "0.4.1",
